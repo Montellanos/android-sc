@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Demo</string>
+
+
+    <string name="demo_text">Cambiando</string>
+
+
+    <string name="navigation_health">Salud</string>
+    <string name="navigation_sports">Deportes</string>
+    <string name="navigation_education">Educacion</string>
+    <string name="navigation_violence">Violencia</string>
+    <string name="navigation_travel">Viajes</string>
+
+
+</resources>

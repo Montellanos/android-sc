@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="@string/navigation_health"
+        android:icon="@drawable/navigation_health"
+        android:id="@+id/navigation_health"/>
+
+    <item android:title="@string/navigation_sports"
+        android:icon="@drawable/navigation_sports"
+        android:id="@+id/navigation_sports"/>
+
+    <item android:title="@string/navigation_education"
+        android:icon="@drawable/navigation_education"
+        android:id="@+id/navigation_education"/>
+
+    <item android:title="@string/navigation_violence"
+        android:icon="@drawable/navigation_violence"
+        android:id="@+id/navigation_violence"/>
+
+    <item android:title="@string/navigation_travel"
+        android:icon="@drawable/navigation_travel"
+        android:id="@+id/navigation_travel"/>
+</menu>
