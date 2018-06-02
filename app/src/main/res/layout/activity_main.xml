@@ -8,12 +8,29 @@
     android:background="@color/colorWhite">
 
 
+
+
+        <TextView
+            android:id="@+id/titleApp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height"
+            android:layout_marginBottom="@dimen/navigation_height"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size_title"
+            android:gravity="center_horizontal"/>
+
+
+
+
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/navigation_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu"/>
+
+
 
 
 </android.support.constraint.ConstraintLayout>
