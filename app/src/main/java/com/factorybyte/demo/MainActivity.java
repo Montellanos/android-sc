@@ -4,7 +4,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.factorybyte.demo.helper.DisableSwiftBottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView = findViewById(R.id.navigation);
 
-        DisableSwiftBottomNavigationView.disableShiftMode(navigationView);
+
 
 
     }

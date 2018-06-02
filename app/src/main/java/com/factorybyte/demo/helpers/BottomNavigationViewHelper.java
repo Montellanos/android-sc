@@ -1,4 +1,4 @@
-package com.factorybyte.demo.helper;
+package com.factorybyte.demo.helpers;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;
@@ -8,7 +8,8 @@ import android.util.Log;
 
 import java.lang.reflect.Field;
 
-public class DisableSwiftBottomNavigationView {
+public class BottomNavigationViewHelper {
+
 
     @SuppressLint("RestrictedApi")
     public static void disableShiftMode(BottomNavigationView view) {
@@ -35,4 +36,6 @@ public class DisableSwiftBottomNavigationView {
             Log.e("BNVHelper", "Unable to change value of shift mode", e);
         }
     }
+
+
 }
