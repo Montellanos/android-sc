@@ -1,15 +1,23 @@
 package com.factorybyte.demo;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.factorybyte.demo.adapters.ViewPagerAdapter;
+import com.factorybyte.demo.fragments.EducationFragment;
+import com.factorybyte.demo.fragments.HealthFragment;
+import com.factorybyte.demo.fragments.SportsFragment;
+import com.factorybyte.demo.fragments.TravelFragment;
+import com.factorybyte.demo.fragments.ViolenceFragment;
 import com.factorybyte.demo.helpers.BottomNavigationViewHelper;
 
 
@@ -17,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     //definimos varibles
     private BottomNavigationView navigationView;
-    private TextView textView;
+    private ViewPager viewPager;
+    private int indexPage = 2;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationViewHelper.disableShiftMode(navigationView);
 
-        textView = findViewById(R.id.titleApp);
 
 
         initConfig();
+
+        viewPager =  findViewById(R.id.viewPager);
+
+
+
+
+        initializateView();
+
+        //adaptador para los fragmentos
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -45,19 +64,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.navigation_health:
-                        textView.setText(getResources().getString(R.string.navigation_health));
+                        viewPager.setCurrentItem(0);
                         return true;
                     case R.id.navigation_sports:
-                        textView.setText(getResources().getString(R.string.navigation_sports));
+                        viewPager.setCurrentItem(1);
                         return true;
                     case R.id.navigation_education:
-                        textView.setText(getResources().getString(R.string.navigation_education));
+                        viewPager.setCurrentItem(2);
                         return true;
                     case R.id.navigation_violence:
-                        textView.setText(getResources().getString(R.string.navigation_violence));
+                        viewPager.setCurrentItem(3);
                         return true;
                     case R.id.navigation_travel:
-                        textView.setText(getResources().getString(R.string.navigation_travel));
+                        viewPager.setCurrentItem(4);
                         return true;
 
                 }
@@ -68,7 +87,57 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                navigationView.getMenu().getItem(position).setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
+
+
+
+
+    }
+
+    private void initializateView() {
+
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        HealthFragment healthFragment = new HealthFragment();
+        adapter.addFragment(healthFragment);
+
+
+        SportsFragment sportsFragment = new SportsFragment();
+        adapter.addFragment(sportsFragment);
+
+
+        EducationFragment educationFragment = new EducationFragment();
+        adapter.addFragment(educationFragment);
+
+        ViolenceFragment violenceFragment = new ViolenceFragment();
+        adapter.addFragment(violenceFragment);
+
+        TravelFragment travelFragment = new TravelFragment();
+        adapter.addFragment(travelFragment);
+
+
+        viewPager.setAdapter(adapter);
+
+
+        viewPager.setCurrentItem(indexPage);
 
 
 
@@ -99,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initConfig() {
 
-        textView.setText(getResources().getString(R.string.navigation_education));
 
         navigationView.setSelectedItemId(R.id.navigation_education);
     }

@@ -11,5 +11,12 @@
     <string name="navigation_violence">Violencia</string>
     <string name="navigation_travel">Viajes</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="health_fragment">Hello health fragment</string>
+    <string name="sports_fragment">Hello sports fragment</string>
+    <string name="education_fragment">Hello education fragment</string>
+    <string name="violence_fragment">Hello violence fragment</string>
+    <string name="travel_fragment">Hello travel fragment</string>
+
 
 </resources>

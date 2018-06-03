@@ -8,17 +8,11 @@
     android:background="@color/colorWhite">
 
 
-
-
-        <TextView
-            android:id="@+id/titleApp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/text_height"
-            android:layout_marginBottom="@dimen/navigation_height"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_size_title"
-            android:gravity="center_horizontal"/>
-
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/navigation_height"
+        android:id="@+id/viewPager"/>
 
 
 
@@ -29,7 +23,6 @@
         android:layout_height="@dimen/navigation_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu"/>
-
 
 
 

@@ -11,6 +11,12 @@
     <dimen name="text_size_title">35sp</dimen>
 
 
+    <dimen name="card_height">250dp</dimen>
+
+
+    <dimen name="guideline">8dp</dimen>
+
+
 
 
 </resources>
