@@ -29,6 +29,8 @@ public class DoctorsRecyclerViewAdapter extends FirestoreRecyclerAdapter<Doctor,
     protected void onBindViewHolder(@NonNull DoctorsViewHolder holder, int position, @NonNull Doctor model) {
 
         holder.setDoctorName(model.getName());
+        holder.setImageView(model.getImage());
+        holder.setButton(model.getTelephone());
     }
 
     @NonNull
